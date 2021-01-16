@@ -61,12 +61,20 @@
             }
 
             if (num === random) {
-                alert('Good Job!');
+          Swal.fire({
+            title: "Yeah!!",
+            text: "猜對囉!!",
+            icon: "success",
+          });
                 return;
             }
 
             if (num < random) {
-                alert('在大一些');
+          Swal.fire({
+            title: "OHOH~",
+            text: "在大一些",
+            icon: "warning",
+          });
                 return;
             }
 
