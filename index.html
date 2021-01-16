@@ -1,48 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-        button {
-            width: 100px;
-            background: pink;
-            padding: 10px;
-            border: none;
-            border-radius: 10px;
-        }
+      button {
+        width: 100px;
+        background: pink;
+        padding: 10px;
+        border: none;
+        border-radius: 10px;
+      }
 
-        button:hover {
-            background: orange;
-        }
+      button:hover {
+        background: orange;
+      }
 
-        input {
-            border-radius: 10px;
-            border: 1px solid grey;
-            padding: 10px;
-            width: 300px;
-        }
+      input {
+        border-radius: 10px;
+        border: 1px solid grey;
+        padding: 10px;
+        width: 300px;
+      }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  </head>
 
-</head>
-
-<body>
+  <body>
     <h1>Guess Number</h1>
     <label>
-        <input type="text" id="num" placeholder="Input the number between 1 ~ 6">
+      <input
+        type="text"
+        id="num"
+        placeholder="Input the number between 1 ~ 6"
+      />
     </label>
-    <button id='btn'>Guess</button>
+    <button id="btn">Guess</button>
 
     <script>
-        const random = Math.floor(Math.random() * 6) + 1;
-        const btn = document.getElementById('btn');
+      const random = Math.floor(Math.random() * 6) + 1;
+      const btn = document.getElementById("btn");
 
-        btn.addEventListener('click', function (e) {
-            const num = parseInt(document.getElementById('num').value);
-            if (!num) {
+      btn.addEventListener("click", function (e) {
+        const num = parseInt(document.getElementById("num").value);
+        if (!num) {
           Swal.fire({
             title: "Oh!Oh!",
             text: "需要輸入數字喔",
@@ -57,31 +59,33 @@
             text: "數字不能大於 6",
             icon: "error",
           });
-                return;
-            }
+          return;
+        }
 
-            if (num === random) {
+        if (num === random) {
           Swal.fire({
             title: "Yeah!!",
             text: "猜對囉!!",
             icon: "success",
           });
-                return;
-            }
+          return;
+        }
 
-            if (num < random) {
+        if (num < random) {
           Swal.fire({
             title: "OHOH~",
             text: "在大一些",
             icon: "warning",
           });
-                return;
-            }
+          return;
+        }
 
-            alert('在小一些');
+        Swal.fire({
+          title: "OHOH~",
+          text: "在小一些",
+          icon: "warning",
         });
+      });
     </script>
-
-</body>
-
+  </body>
 </html>
