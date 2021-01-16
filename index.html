@@ -43,7 +43,20 @@
         btn.addEventListener('click', function (e) {
             const num = parseInt(document.getElementById('num').value);
             if (!num) {
-                alert('需要輸入數字喔');
+          Swal.fire({
+            title: "Oh!Oh!",
+            text: "需要輸入數字喔",
+            icon: "error",
+          });
+          return;
+        }
+
+        if (num > 6) {
+          Swal.fire({
+            title: "Oh!Oh!",
+            text: "數字不能大於 6",
+            icon: "error",
+          });
                 return;
             }
 
